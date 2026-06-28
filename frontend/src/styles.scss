@@ -88,46 +88,88 @@
 
 /* ── Dark Mode ── */
 .dark {
-  background-color: #1a1a1a;
-  color: #F9F5F0;
+  background-color: #111 !important;
+  color: #e8e0d6;
 
-  /* surfaces */
-  .card-luxury   { background-color: #262626; border-color: rgba(255,255,255,0.08); }
-  .card-glass    { background: rgba(44,44,44,0.85); border-color: rgba(255,255,255,0.1); }
-  .input-luxury  { background-color: #333; color: #F9F5F0; border-color: rgba(255,255,255,0.15); }
-  .btn-outline   { border-color: #C9A96E; color: #C9A96E; }
-  .btn-outline:hover { background-color: #C9A96E; color: #fff; }
+  /* ── Body & page shell ── */
+  body { background-color: #111 !important; color: #e8e0d6 !important; }
 
-  /* text */
-  .section-title    { color: #F9F5F0; }
-  .section-subtitle { color: rgba(249,245,240,0.65); }
-  .nav-link         { color: rgba(249,245,240,0.75); }
+  /* ── All white/cream backgrounds ── */
+  [class*="bg-white"]           { background-color: #1c1c1c !important; }
+  [class*="bg-cream"]           { background-color: #181818 !important; }
+  .bg-gradient-luxury           { background: #181818 !important; }
 
-  /* bg overrides for white/cream sections */
-  .bg-white        { background-color: #1e1e1e !important; }
-  .bg-gradient-luxury { background: #1a1a1a !important; }
-  section.bg-white,
-  section[class*="bg-white"]  { background-color: #1e1e1e !important; }
+  /* ── Named component surfaces ── */
+  .card-luxury  { background-color: #242424 !important; border-color: rgba(255,255,255,0.07) !important; box-shadow: 0 2px 20px rgba(0,0,0,0.4) !important; }
+  .card-glass   { background: rgba(28,28,28,0.95) !important; border-color: rgba(201,169,110,0.15) !important; backdrop-filter: blur(12px); }
 
-  /* force text colours on common utility classes */
-  .text-charcoal   { color: #e8e0d6 !important; }
-  .text-charcoal\/60, .text-charcoal\/70, .text-charcoal\/80 { color: rgba(232,224,214,0.65) !important; }
-  .text-charcoal-50, .text-charcoal-60, .text-charcoal-70    { color: rgba(232,224,214,0.55) !important; }
+  /* ── Inputs & form elements ── */
+  .input-luxury { background-color: #252525 !important; color: #e8e0d6 !important; border-color: rgba(201,169,110,0.25) !important; }
+  input:not([type="checkbox"]):not([type="radio"]) { background-color: #252525 !important; color: #e8e0d6 !important; }
+  select        { background-color: #252525 !important; color: #e8e0d6 !important; }
+  textarea      { background-color: #252525 !important; color: #e8e0d6 !important; }
+  input::placeholder, textarea::placeholder { color: rgba(232,224,214,0.35) !important; }
 
-  /* navbar */
-  header.bg-white { background-color: #1e1e1e !important; }
+  /* ── All charcoal text → warm light ── */
+  [class*="text-charcoal"]  { color: #d4ccc4 !important; }
+  .text-charcoal-30 { color: rgba(212,204,196,0.30) !important; }
+  .text-charcoal-40 { color: rgba(212,204,196,0.40) !important; }
+  .text-charcoal-50 { color: rgba(212,204,196,0.50) !important; }
+  .text-charcoal-60 { color: rgba(212,204,196,0.60) !important; }
+  .text-charcoal-70 { color: rgba(212,204,196,0.70) !important; }
 
-  /* table cells */
-  table { background-color: #1e1e1e; color: #e8e0d6; }
-  thead tr { background-color: #111 !important; }
-  tbody tr { background-color: #1e1e1e; }
-  tbody tr:nth-child(even) { background-color: #252525; }
+  /* ── Section typography ── */
+  .section-title    { color: #f0ebe4 !important; }
+  .section-subtitle { color: rgba(212,204,196,0.65) !important; }
+  h1, h2, h3, h4, h5, h6 { color: #f0ebe4 !important; }
+  p  { color: #b8b0a8 !important; }
 
-  /* accordion / FAQ */
-  .border-cream-200 { border-color: rgba(255,255,255,0.1) !important; }
-  .bg-cream-100     { background-color: #252525 !important; }
-  .bg-cream-200     { background-color: #2e2e2e !important; }
-  .hover\:bg-cream-200:hover { background-color: #333 !important; }
+  /* ── Navbar (scrolled state turns white) ── */
+  header { background-color: rgba(17,17,17,0.95) !important; border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
+  .nav-link { color: rgba(212,204,196,0.85) !important; }
+  .nav-link.active { color: #C9A96E !important; }
+
+  /* ── Borders ── */
+  [class*="border-cream"]    { border-color: rgba(255,255,255,0.08) !important; }
+  [class*="border-charcoal"] { border-color: rgba(255,255,255,0.12) !important; }
+  [class*="border-white"]    { border-color: rgba(255,255,255,0.1) !important; }
+
+  /* ── Buttons ── */
+  .btn-white  { background-color: #2a2a2a !important; color: #e8e0d6 !important; box-shadow: 0 2px 12px rgba(0,0,0,0.3) !important; }
+  .btn-white:hover { background-color: #333 !important; }
+  .btn-outline { border-color: #C9A96E !important; color: #C9A96E !important; }
+  .btn-outline:hover { background-color: #C9A96E !important; color: #fff !important; }
+  .btn-ghost  { border-color: rgba(255,255,255,0.2) !important; color: #d4ccc4 !important; }
+  .btn-ghost:hover { background-color: rgba(255,255,255,0.08) !important; border-color: rgba(255,255,255,0.4) !important; }
+
+  /* ── Category/filter pills (un-selected) ── */
+  [class*="border-cream-300"] { border-color: rgba(255,255,255,0.15) !important; }
+
+  /* ── Mobile menu ── */
+  .lg\:hidden { background-color: #1c1c1c !important; }
+
+  /* ── Tables ── */
+  table      { background-color: #1c1c1c !important; color: #d4ccc4 !important; }
+  thead tr   { background-color: #111 !important; }
+  th         { color: #e8e0d6 !important; }
+  tbody tr   { background-color: #1c1c1c !important; }
+  tbody tr:nth-child(even) { background-color: #222 !important; }
+  td         { color: #c8c0b8 !important; border-color: rgba(255,255,255,0.05) !important; }
+
+  /* ── Dividers ── */
+  hr, [class*="divide-"] { border-color: rgba(255,255,255,0.08) !important; }
+
+  /* ── Badges ── */
+  .badge-gold     { background-color: rgba(201,169,110,0.15) !important; color: #C9A96E !important; }
+  .badge-blush    { background-color: rgba(220,120,140,0.15) !important; color: #e8a0b0 !important; }
+  .badge-lavender { background-color: rgba(140,100,200,0.15) !important; color: #c0a0e8 !important; }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar-track { background: #1c1c1c !important; }
+  ::-webkit-scrollbar-thumb { background: #C9A96E !important; }
+
+  /* ── Gradient sections that are dark by design — keep hero/offer darks untouched ── */
+  /* (charcoal bg sections, gradient-to-t overlays are already dark — no override needed) */
 }
 
 /* ── Keyframes ── */
