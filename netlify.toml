@@ -3,6 +3,12 @@
   command = "npm run build"
   publish = "frontend/dist/frontend/browser"
 
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  # disable auto-detected Angular runtime (requires Node 22.22+)
+
 [[redirects]]
   from   = "/*"
   to     = "/index.html"
