@@ -37,3 +37,6 @@ coverage/
 
 # Misc
 backend-src/
+
+# Local Netlify folder
+.netlify
