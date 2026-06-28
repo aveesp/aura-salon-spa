@@ -90,11 +90,44 @@
 .dark {
   background-color: #1a1a1a;
   color: #F9F5F0;
-  .card-luxury { @apply bg-neutral-800; }
-  .card-glass  { background: rgba(44,44,44,0.8); border-color: rgba(255,255,255,0.1); }
-  .input-luxury { @apply bg-neutral-700 text-cream-100; }
-  .section-title { @apply text-cream-100; }
-  .nav-link { color: rgba(249,245,240,0.75); }
+
+  /* surfaces */
+  .card-luxury   { background-color: #262626; border-color: rgba(255,255,255,0.08); }
+  .card-glass    { background: rgba(44,44,44,0.85); border-color: rgba(255,255,255,0.1); }
+  .input-luxury  { background-color: #333; color: #F9F5F0; border-color: rgba(255,255,255,0.15); }
+  .btn-outline   { border-color: #C9A96E; color: #C9A96E; }
+  .btn-outline:hover { background-color: #C9A96E; color: #fff; }
+
+  /* text */
+  .section-title    { color: #F9F5F0; }
+  .section-subtitle { color: rgba(249,245,240,0.65); }
+  .nav-link         { color: rgba(249,245,240,0.75); }
+
+  /* bg overrides for white/cream sections */
+  .bg-white        { background-color: #1e1e1e !important; }
+  .bg-gradient-luxury { background: #1a1a1a !important; }
+  section.bg-white,
+  section[class*="bg-white"]  { background-color: #1e1e1e !important; }
+
+  /* force text colours on common utility classes */
+  .text-charcoal   { color: #e8e0d6 !important; }
+  .text-charcoal\/60, .text-charcoal\/70, .text-charcoal\/80 { color: rgba(232,224,214,0.65) !important; }
+  .text-charcoal-50, .text-charcoal-60, .text-charcoal-70    { color: rgba(232,224,214,0.55) !important; }
+
+  /* navbar */
+  header.bg-white { background-color: #1e1e1e !important; }
+
+  /* table cells */
+  table { background-color: #1e1e1e; color: #e8e0d6; }
+  thead tr { background-color: #111 !important; }
+  tbody tr { background-color: #1e1e1e; }
+  tbody tr:nth-child(even) { background-color: #252525; }
+
+  /* accordion / FAQ */
+  .border-cream-200 { border-color: rgba(255,255,255,0.1) !important; }
+  .bg-cream-100     { background-color: #252525 !important; }
+  .bg-cream-200     { background-color: #2e2e2e !important; }
+  .hover\:bg-cream-200:hover { background-color: #333 !important; }
 }
 
 /* ── Keyframes ── */

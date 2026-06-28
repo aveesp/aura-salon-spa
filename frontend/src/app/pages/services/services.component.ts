@@ -96,7 +96,7 @@ interface Category { key: string; label: string; icon: string; }
                 </div>
                 <div class="flex-1 text-right">
                   <span class="font-sans text-xs text-charcoal/40">from</span>
-                  <span class="price-tag ml-1">£{{ svc.startingPrice }}</span>
+                  <span class="price-tag ml-1">₹{{ svc.startingPrice }}</span>
                 </div>
               </div>
               <a routerLink="/booking"

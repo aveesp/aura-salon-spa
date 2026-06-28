@@ -3,7 +3,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SalonDataService } from '../../../core/services/salon-data.service';
 
-interface NavItem { label: string; route: string; }
+interface NavItem { label: string; route: string; exact?: boolean; }
 
 @Component({
   selector: 'app-navbar',
@@ -35,7 +35,9 @@ interface NavItem { label: string; route: string; }
       <ul class="hidden lg:flex items-center gap-8">
         @for (item of navItems; track item.route) {
           <li>
-            <a [routerLink]="item.route" routerLinkActive="active"
+            <a [routerLink]="item.route"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="item.exact ? {exact: true} : {exact: false}"
               class="nav-link text-sm"
               [class.text-white]="!scrolled()"
               [class.text-charcoal]="scrolled()">
@@ -80,7 +82,9 @@ interface NavItem { label: string; route: string; }
     <div class="lg:hidden bg-white border-t border-cream-200 shadow-luxury animate-fade-in">
       <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1">
         @for (item of navItems; track item.route) {
-          <a [routerLink]="item.route" routerLinkActive="active"
+          <a [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="item.exact ? {exact: true} : {exact: false}"
             (click)="mobileOpen.set(false)"
             class="px-4 py-3 rounded-xl font-sans text-sm font-medium text-charcoal hover:bg-cream-200 hover:text-gold transition-colors duration-200">
             {{ item.label }}
@@ -104,7 +108,7 @@ export class NavbarComponent {
   mobileOpen = signal(false);
 
   navItems: NavItem[] = [
-    { label: 'Home', route: '/' },
+    { label: 'Home', route: '/', exact: true },
     { label: 'Services', route: '/services' },
     { label: 'Gallery', route: '/gallery' },
     { label: 'Membership', route: '/membership' },

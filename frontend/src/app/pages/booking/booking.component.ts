@@ -87,7 +87,7 @@ type Step = 1 | 2 | 3 | 4;
                   <span class="font-sans text-xs text-charcoal/40 flex items-center gap-1">
                     <span class="material-icons-round text-xs">schedule</span> {{ svc.duration }}min
                   </span>
-                  <span class="price-tag text-base">£{{ svc.startingPrice }}</span>
+                  <span class="price-tag text-base">₹{{ svc.startingPrice }}</span>
                 </div>
               </div>
               @if (selectedService()?.id === svc.id) {
@@ -325,7 +325,7 @@ type Step = 1 | 2 | 3 | 4;
                 <div class="border-t border-cream-300 pt-4 mt-4">
                   <div class="flex justify-between">
                     <span class="text-charcoal/60">Starting from</span>
-                    <span class="price-tag text-xl">£{{ selectedService()?.startingPrice }}</span>
+                    <span class="price-tag text-xl">₹{{ selectedService()?.startingPrice }}</span>
                   </div>
                   <p class="text-xs text-charcoal/40 mt-1">Final price confirmed at consultation</p>
                 </div>

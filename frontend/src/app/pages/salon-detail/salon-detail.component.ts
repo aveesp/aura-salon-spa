@@ -95,7 +95,7 @@ import { Salon } from '../../core/models';
                   </div>
                 </div>
                 <div class="flex items-center gap-4">
-                  <span class="price-tag">£{{ svc.startingPrice }}</span>
+                  <span class="price-tag">₹{{ svc.startingPrice }}</span>
                   <a routerLink="/booking" class="btn-primary text-xs py-1.5 px-4 hidden sm:inline-flex">Book</a>
                 </div>
               </div>

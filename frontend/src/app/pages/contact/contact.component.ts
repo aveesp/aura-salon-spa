@@ -94,6 +94,9 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
                 <div>
                   <label class="font-sans text-xs text-charcoal/60 uppercase tracking-wider mb-2 block">Last Name *</label>
                   <input formControlName="lastName" class="input-luxury" placeholder="Laurent" />
+                  @if (contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched) {
+                    <p class="font-sans text-xs text-red-500 mt-1">Last name is required.</p>
+                  }
                 </div>
               </div>
               <div>
@@ -180,7 +183,7 @@ export class ContactComponent {
 
   contactForm = this.fb.group({
     firstName: ['', Validators.required],
-    lastName:  [''],
+    lastName:  ['', Validators.required],
     email:     ['', [Validators.required, Validators.email]],
     phone:     [''],
     topic:     [''],

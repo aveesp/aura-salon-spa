@@ -169,7 +169,7 @@ import { Service, Stylist, Testimonial, BlogPost, Offer } from '../../core/model
                 <span class="material-icons-round text-sm">schedule</span>
                 <span class="font-sans text-xs">{{ svc.duration }} min</span>
               </div>
-              <span class="price-tag text-lg">From £{{ svc.startingPrice }}</span>
+              <span class="price-tag text-lg">From ₹{{ svc.startingPrice }}</span>
             </div>
           </div>
         </div>

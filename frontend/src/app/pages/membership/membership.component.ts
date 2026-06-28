@@ -33,10 +33,10 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
     <div class="flex items-center justify-center gap-4 mb-12">
       <span class="font-sans text-sm" [class.text-charcoal]="!annual()" [class.text-charcoal-50]="annual()">Monthly</span>
       <button (click)="annual.set(!annual())"
-        class="relative w-14 h-7 rounded-full transition-colors duration-300"
-        [class.bg-gradient-gold]="annual()" [class.bg-cream-300]="!annual()">
-        <span class="absolute top-1 w-5 h-5 rounded-full bg-white shadow transition-transform duration-300"
-          [class.translate-x-1]="!annual()" [class.translate-x-8]="annual()"></span>
+        class="relative w-14 h-7 rounded-full transition-colors duration-300 focus:outline-none"
+        [class.bg-gradient-gold]="annual()" [class.bg-gray-300]="!annual()">
+        <span class="absolute top-1 left-1 w-5 h-5 rounded-full bg-white shadow transition-transform duration-300"
+          [class.translate-x-7]="annual()"></span>
       </button>
       <span class="font-sans text-sm flex items-center gap-2"
         [class.text-charcoal]="annual()" [class.text-charcoal-50]="!annual()">
@@ -86,7 +86,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
               <div class="flex items-end gap-1">
                 <span class="font-serif text-5xl font-semibold"
                   [class.text-gold]="true">
-                  £{{ annual() ? Math.round(plan.price * 0.8) : plan.price }}
+                  ₹{{ annual() ? Math.round(plan.price * 0.8) : plan.price }}
                 </span>
                 <span class="font-sans text-sm pb-2"
                   [class.text-cream-60]="plan.highlight"
@@ -96,7 +96,7 @@ import { SectionHeaderComponent } from '../../shared/components/section-header/s
                 <p class="font-sans text-xs mt-1"
                   [class.text-cream-50]="plan.highlight"
                   [class.text-charcoal-40]="!plan.highlight">
-                  Billed £{{ Math.round(plan.price * 0.8 * 12) }}/year
+                  Billed ₹{{ Math.round(plan.price * 0.8 * 12) }}/year
                 </p>
               }
             </div>
